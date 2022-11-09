@@ -46,7 +46,10 @@ exports.voiceResponse = function voiceResponse(requestBody) {
     // This is an outgoing call
 
     // set the callerId
-    let dial = twiml.dial({ callerId });
+    //let dial = twiml.dial({ callerId });
+    let dial = twiml.dial({
+    action: 'https://call-center.christembassy-ism.com/test/callcenta/callrecprocess.php',
+    method: 'POST' }, callerId);
 
     // Check if the 'To' parameter is a Phone Number or Client Name
     // in order to use the appropriate TwiML noun 
