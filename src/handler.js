@@ -49,7 +49,7 @@ exports.voiceResponse = function voiceResponse(requestBody) {
     //let dial = twiml.dial({ callerId });
     let dial = twiml.dial({
        callerId: callerId,
-       record: 'record-from-ringing-dual',
+       record: 'record-from-answer-dual',
        method: 'POST',
        statusCallbackEvent: ["initiated", "ringing", "answered", "completed"],
        statusCallback: 'https://call-center.christembassy-ism.com/test/callcenta/callrecprocess3.php',
