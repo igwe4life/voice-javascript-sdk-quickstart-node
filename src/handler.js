@@ -31,6 +31,7 @@ exports.tokenGenerator = function tokenGenerator() {
 
 exports.voiceResponse = function voiceResponse(requestBody) {
   const toNumberOrClientName = requestBody.To;
+  const toNumberFrom = '+18655034966';
   const callerId = config.callerId;
   let twiml = new VoiceResponse();
 
@@ -48,7 +49,7 @@ exports.voiceResponse = function voiceResponse(requestBody) {
     // set the callerId
     //let dial = twiml.dial({ callerId });
     let dial = twiml.dial({
-       callerId: callerId,
+       callerId: toNumberFrom,
        record: 'record-from-answer-dual',
        method: 'POST',
        statusCallbackEvent: ["initiated", "ringing", "answered", "completed"],
