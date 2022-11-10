@@ -51,6 +51,8 @@ exports.voiceResponse = function voiceResponse(requestBody) {
        callerId: callerId,
        record: 'record-from-ringing-dual',
        method: 'POST',
+       statusCallbackEvent: ["initiated", "ringing", "answered", "completed"],
+       statusCallback: 'https://call-center.christembassy-ism.com/test/callcenta/callrecprocess3.php',
        recordingStatusCallback: 'https://call-center.christembassy-ism.com/test/callcenta/callrecprocess.php'
      });
 
