@@ -33,6 +33,16 @@ exports.voiceResponse = function voiceResponse(requestBody) {
   const toNumberOrClientName = requestBody.To;
   const toNumberFrom = '+18655034966';
   const callerId = config.callerId;
+  
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://call-center.christembassy-ism.com/test/callcenta/1234.php', true);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.onload = function () {
+      // do something to response
+      console.log(this.responseText);
+  };
+  xhr.send('user=person&pwd=password&organization=place&requiredkey=key');
+  
   let twiml = new VoiceResponse();
 
   // If the request to the /voice endpoint is TO your Twilio Number, 
