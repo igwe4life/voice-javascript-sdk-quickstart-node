@@ -52,6 +52,7 @@ exports.voiceResponse = function voiceResponse(requestBody) {
     //let dial = twiml.dial({ callerId });
     let dial = twiml.dial({
        callerId: toNumberFrom,
+       From: toNumberFrom,
        targetId: toClientID,
        record: 'record-from-answer-dual',
        method: 'POST',
